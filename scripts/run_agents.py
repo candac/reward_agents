@@ -1,5 +1,5 @@
 import yaml
-from reward_agent.planner import Planner
+from reward_agents.planner import Planner
 # from reward_agent.factuality_agent import FactualityAgent
 # from reward_agent.constraint_agent import ConstraintAgent
 
