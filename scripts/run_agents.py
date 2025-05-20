@@ -11,6 +11,7 @@ if __name__ == "__main__":
 
     # Instantiate agents with their specific configs
     planner = Planner(agents_cfg["planner"])
+    print(f"[{planner.name}] Using model: {planner.model_name_or_path}")
     # factuality_agent = FactualityAgent(agents_cfg["factuality"])
     # constraint_agent = ConstraintAgent(agents_cfg["constraint"])
 
@@ -21,7 +22,9 @@ if __name__ == "__main__":
         "Generate a limerick that rhymes with 'Singapore'.",
     ]
     for t in test_cases:
-        print(f"▶ {t}\n  → {planner(t) or '[]'}\n")
+        print(f"\n▶ {t}")
+        planner_result = planner(t)
+        print(f"  → [{planner.name}] {planner_result or '[]'}")
 
     # # Example run: Factuality
     # fact_text = "Singapore is the capital of Malaysia."

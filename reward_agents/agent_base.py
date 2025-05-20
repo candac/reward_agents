@@ -5,6 +5,7 @@ import torch
 class AgentBase:
     def __init__(self, agent_config):
         self.agent_config = agent_config
+        self.name = self.__class__.__name__.replace("Agent", "")  # e.g. "FactualityAgent" -> "Factuality"
         model_path = os.path.join(agent_config["model_path"], agent_config["model_name"])
         dtype = getattr(torch, agent_config.get("dtype", "float16"))
         self.tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=True)
