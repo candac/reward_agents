@@ -15,6 +15,14 @@ if __name__ == "__main__":
     # factuality_agent = FactualityAgent(agents_cfg["factuality"])
     # constraint_agent = ConstraintAgent(agents_cfg["constraint"])
 
+    # Mapping from label to agent name
+    label_to_agent = {
+        "A": "Constraint",
+        "B": "Factuality",
+        "C": "Helpfulness",
+        # Add more as needed
+    }
+
     # Example run: Planner
     test_cases = [
         "Write a JSON list with exactly 5 city names.",
@@ -23,8 +31,13 @@ if __name__ == "__main__":
     ]
     for t in test_cases:
         print(f"\n▶ {t}")
-        planner_result = planner(t)
-        print(f"  → [{planner.name}] {planner_result or '[]'}")
+        result = planner(t)
+        if isinstance(result, list):
+            for label in result:
+                agent_name = label_to_agent.get(label, "Unknown")
+                print(f"  → [{label}: {agent_name}]")
+        else:
+            print(f"  → {result}")
 
     # # Example run: Factuality
     # fact_text = "Singapore is the capital of Malaysia."
