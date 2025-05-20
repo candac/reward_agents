@@ -1,0 +1,33 @@
+agents:
+  planner:
+    enabled: true
+    model_path: "/home/astraluser/hf_models/"
+    model_name: "llama-sealion-3_5-8b-r"
+    dtype: "float16"
+    device_map: "auto"
+    generation:
+      temperature: 0.0
+      top_p: null
+      max_new_tokens: 256
+
+  # factuality:
+  #   enabled: true
+  #   model_path: "/home/astraluser/hf_models/"
+  #   model_name: "llama3-8b"
+  #   dtype: "float16"
+  #   device_map: "auto"
+  #   generation:
+  #     temperature: 0.2
+  #     top_p: 0.9
+  #     max_new_tokens: 128
+
+  # constraint:
+  #   enabled: true
+  #   model_path: "/home/astraluser/hf_models/"
+  #   model_name: "llama3-8b"
+  #   dtype: "float16"
+  #   device_map: "cpu"
+  #   generation:
+  #     temperature: 0.0
+  #     top_p: null
+  #     max_new_tokens: 64
