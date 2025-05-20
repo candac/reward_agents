@@ -1,4 +1,4 @@
-# Agentic Multi-Agent Reward Modeling System
+# AISG Reward Agents
 
 - Modular agents (Planner, Factuality, Constraint, etc.), each with their own LLM and config
 - Global config.yaml for all agent settings
