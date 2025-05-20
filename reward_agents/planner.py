@@ -34,8 +34,8 @@ class Planner(AgentBase):
         prompt = self.build_prompt(instruction)
         reply = self.chat_completion(
             messages=[{"role": "user", "content": prompt}],
-        )
-        print(f"[Planner] Model raw reply: {reply!r}")
+        ) 
+        #print(f"[Planner] Model raw reply: {reply!r}") # uncomment to see raw reply from LLM
         lines = reply.strip().splitlines()
         last_tag_line = None
         for line in reversed(lines):
